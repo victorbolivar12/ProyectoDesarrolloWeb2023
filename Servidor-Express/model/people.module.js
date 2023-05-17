@@ -12,7 +12,7 @@ const peopleModule = db.define(
     },
     DNI: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       unique: true,
     },
     nombre: {
@@ -25,28 +25,28 @@ const peopleModule = db.define(
     },
     direccion: {
       type: DataTypes.STRING(200),
-      allowNull: false,
+      allowNull: true,
     },
     contacto: {
       type: DataTypes.STRING(20),
-      allowNull: false,
+      allowNull: true,
     },
     email: {
       type: DataTypes.STRING(100),
-      allowNull: false,
+      allowNull: true,
       unique: true,
     },
     fecha_nacimiento: {
       type: DataTypes.DATEONLY,
-      allowNull: false,
+      allowNull: true,
     },
     edad: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     status: {
       type: DataTypes.STRING(20),
-      allowNull: false,
+      allowNull: true,
     },
   },
   {
@@ -55,7 +55,7 @@ const peopleModule = db.define(
   }
 );
 
-// Sincroniza el modelo con la base de datos
+//Sincroniza el modelo con la base de datos
 // peopleModule
 //   .sync({ force: false })
 //   .then(() => {

@@ -13,7 +13,7 @@ const UserModule = db.define(
     },
     username: {
       type: DataTypes.STRING(50),
-      allowNull: false,
+      allowNull: true,
     },
     password: {
       type: DataTypes.STRING(100),
@@ -21,7 +21,7 @@ const UserModule = db.define(
     },
     fecha_ingreso: {
       type: DataTypes.DATEONLY,
-      allowNull: false,
+      allowNull: true,
     },
     id_persona: {
       type: DataTypes.INTEGER,
@@ -44,7 +44,7 @@ UserModule.prototype.validPassword = async function (password) {
   return this.password === password;
 };
 
-// Sincroniza el modelo con la base de datos
+//Sincroniza el modelo con la base de datos
 // UserModule.sync({ force: false })
 //   .then(() => {
 //     console.log('Tabla "usuarios" creada en la base de datos');
