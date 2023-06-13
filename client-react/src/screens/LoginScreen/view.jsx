@@ -1,41 +1,15 @@
 import * as React from "react";
-import {
-  Avatar,
-  Button,
-  CssBaseline,
-  TextField,
-  FormControlLabel,
-  Checkbox,
-  Link,
-  Paper,
-  Box,
-  Grid,
-  Typography,
-} from "@mui/material";
-
+import { CssBaseline, Paper, Box, Grid, Typography } from "@mui/material";
 import bg from "../../assets/login-bg.jpg";
+import {
+  CustomBottom,
+  TextInput,
+  TextInputPassword,
+  Link,
+} from "../../components";
+// import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-
-const Copyright = (props) => {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-};
-
-const View = () => {
+const View = ({ formik }) => {
   return (
     <Grid container component="main" sx={{ height: "100vh" }}>
       <CssBaseline />
@@ -55,74 +29,89 @@ const View = () => {
           backgroundPosition: "center",
         }}
       />
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+      <Grid
+        item
+        xs={12}
+        sm={8}
+        md={5}
+        component={Paper}
+        elevation={6}
+        sx={{
+          pt: 10,
+          pb: 5,
+          pl: 10,
+          pr: 10,
+        }}
+      >
         <Box
           sx={{
-            my: 8,
-            mx: 4,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            justifyContent: "center",
+            height: "100%",
           }}
         >
           {/* <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar> */}
-          <Typography component="h1" variant="h5">
-            Sign in
+          <Typography component="h1" variant="h4" fontWeight={700}>
+            BIENVENIDO
           </Typography>
           <Box
             component="form"
-            noValidate
-            // onSubmit={handleSubmit}
-            sx={{ mt: 1 }}
+            onSubmit={formik.handleSubmit}
+            sx={{ mt: "auto" }}
           >
-            <TextField
-              margin="normal"
-              required
-              fullWidth
+            <TextInput
               id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
+              name={"email"}
+              label={"Email"}
+              placeholder={"Ingresa tu email"}
+              margin="dense"
+              fullWidth={true}
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              error={formik.touched.email && Boolean(formik.errors.email)}
+              helperText={formik.touched.email && formik.errors.email}
             />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
+            <TextInputPassword
+              id="password"
               name="password"
               label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
+              placeholder={"Ingresa tu contraseña"}
+              margin="dense"
+              fullWidth={true}
+              value={formik.values.password}
+              onChange={formik.handleChange}
+              error={formik.touched.password && Boolean(formik.errors.password)}
+              helperText={formik.touched.password && formik.errors.password}
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button
-              type="submit"
+
+            <CustomBottom
+              name={"Iniciar Sesión"}
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
-            <Copyright sx={{ mt: 5 }} />
+              type="submit"
+              sx={{
+                mt: 10,
+                mb: 2,
+                backgroundImage:
+                  "linear-gradient(180deg, #8AE0FB 0%, #3371EB 100%)",
+              }}
+            />
           </Box>
+          <Typography variant="body2" gutterBottom sx={{ mt: "auto" }}>
+            ¿Todavía no tienes una cuenta?{" "}
+            <Link
+              href={"/register"}
+              variant="subtitle2"
+              color="inherit"
+              underline="none"
+            >
+              {"Regístrate ya!!!"}
+            </Link>
+          </Typography>
         </Box>
       </Grid>
     </Grid>

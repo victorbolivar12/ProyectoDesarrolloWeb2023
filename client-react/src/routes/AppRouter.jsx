@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 
 const LoginScreen = lazy(() => import('../screens/LoginScreen'));
+const RegisterScreen = lazy(() => import('../screens/RegisterScreen'));
 
 
 // const Protected = ({ children }) => {
@@ -36,6 +37,14 @@ export const AppRouter = () => {
             element={
               <IsLoggedIn>
                 <LoginScreen />
+              </IsLoggedIn>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <IsLoggedIn>
+                <RegisterScreen />
               </IsLoggedIn>
             }
           />
