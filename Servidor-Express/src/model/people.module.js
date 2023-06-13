@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import db from "./../database/db.js";
+import db from "../db.js";
 
 const peopleModule = db.define(
   "people",
@@ -15,19 +15,19 @@ const peopleModule = db.define(
       allowNull: true,
       unique: true,
     },
-    nombre: {
+    name: {
       type: DataTypes.STRING(100),
       allowNull: false,
     },
-    apellido: {
+    lastName: {
       type: DataTypes.STRING(20),
       allowNull: false,
     },
-    direccion: {
+    address: {
       type: DataTypes.STRING(200),
       allowNull: true,
     },
-    contacto: {
+    contact: {
       type: DataTypes.STRING(20),
       allowNull: true,
     },
@@ -36,11 +36,11 @@ const peopleModule = db.define(
       allowNull: true,
       unique: true,
     },
-    fecha_nacimiento: {
+    dateOfBirth: {
       type: DataTypes.DATEONLY,
       allowNull: true,
     },
-    edad: {
+    age: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
@@ -50,44 +50,20 @@ const peopleModule = db.define(
     },
   },
   {
-    tableName: "personas",
+    tableName: "people",
     timestamps: false,
   }
 );
+
 
 //Sincroniza el modelo con la base de datos
 // peopleModule
 //   .sync({ force: false })
 //   .then(() => {
-//     console.log('Tabla "personas" creada en la base de datos');
+//     console.log('people table created successfully');
 //   })
 //   .catch((error) => {
-//     console.error(
-//       'Error al crear la tabla "personas" en la base de datos:',
-//       error
-//     );
-//   });
-
-// const newPeople = {
-//   DNI: 12345678,
-//   nombre: "Juan",
-//   apellido: "Pérez",
-//   direccion: "Av. Siempreviva 123",
-//   contacto: "987654321",
-//   email: "juanperez@example.com",
-//   fecha_nacimiento: "1990-01-01",
-//   edad: 31,
-//   status: "Activo",
-// };
-
-// Ingresa un registro a la base de datos
-// Esto es solo para hacer pruebas 
-// peopleModule.create(newPeople)
-//   .then(persona => {
-//     console.log('Nuevo registro insertado:', persona);
-//   })
-//   .catch(error => {
-//     console.error('Error al insertar registro:', error);
+//     console.error('Error creating table people in database ', error );
 //   });
 
 export default peopleModule;

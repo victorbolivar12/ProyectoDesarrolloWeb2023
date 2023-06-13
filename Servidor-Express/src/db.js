@@ -12,5 +12,4 @@ const db = new Sequelize(process.env.DATABASE, process.env.USER, process.env.PAS
   dialect: "postgres",
 });
 
-
 export default  db

@@ -1,30 +1,34 @@
 import UserModule from "../model/user.module.js";
 import peopleModule from "../model/people.module.js";
+import bcrypt from 'bcrypt';
 
 export const createUserWithPerson = async (req, res) => {
-  const { nombre, apellido, email, contraseña } = req.body;
+  const { name, lastName, email, password } = req.body;
 
   try {
-    // Crear la persona en la tabla personas
+    // Create a person in the 'people' table
     const newPerson = await peopleModule.create({
-      nombre,
-      apellido,
+      name,
+      lastName,
       email,
     });
 
-    // Crear el usuario en la tabla usuarios relacionado con la persona creada
+    // Encrypt password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create a user in the users table related to the created person
     const newUser = await UserModule.create({
       username: email,
-      password: contraseña,
-      fecha_ingreso: new Date(),
-      id_persona: newPerson.id,
+      password: hashedPassword,
+      entry_date: new Date(),
+      person_id: newPerson.id,
     });
 
-    // Devolver el nuevo usuario creado como respuesta
+    // Return the newly created user as a response
     return res.status(201).json(newUser);
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: "Error al crear el usuario y la persona" });
+    return res.status(400).json({ message: "Error creating user and person" });
   }
 };
 
@@ -35,6 +39,6 @@ export const getUsers = async (req, res) => {
     res.json(users);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Internal server error" });
+    res.status(400).json({ message: "Internal server error" });
   }
 };
