@@ -2,6 +2,7 @@ import app from './app.js';
 import * as dotenv from 'dotenv'
 import db from './db.js'
 
+
 dotenv.config()
 
 import authRoutes from "./routes/auth.route.js";
@@ -20,6 +21,7 @@ try {
 } catch (error) {
   console.log(`Error: ${error}`);
 }
+
 
 app.get('/', (req, res) => {
   res.send({
