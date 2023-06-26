@@ -1,11 +1,11 @@
 import { DataTypes } from "sequelize";
-import db from "./../database/db.js";
+import db from "../db.js";
 import peopleModule from "./people.module.js";
 
 const UserModule = db.define(
   "users",
   {
-    id_usuario: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -19,11 +19,11 @@ const UserModule = db.define(
       type: DataTypes.STRING(100),
       allowNull: false,
     },
-    fecha_ingreso: {
+    entry_date: {
       type: DataTypes.DATEONLY,
       allowNull: true,
     },
-    id_persona: {
+    person_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -33,17 +33,18 @@ const UserModule = db.define(
     },
   },
   {
-    tableName: "usuarios",
+    tableName: "users",
     timestamps: false,
   }
 );
 
-UserModule.belongsTo(peopleModule, { foreignKey: "id_persona" });
+UserModule.belongsTo(peopleModule, { foreignKey: "person_id" });
 
 UserModule.prototype.validPassword = async function (password) {
   return this.password === password;
 };
 
+<<<<<<< HEAD:Servidor-Express/model/user.module.js
 //Sincroniza el modelo con la base de datos
 UserModule.sync({ force: false })
   .then(() => {
@@ -69,6 +70,16 @@ UserModule.sync({ force: false })
 //   })
 //   .catch(error => {
 //     console.error('Error al insertar usuario:', error);
+=======
+
+// Sincroniza el modelo con la base de datos
+// UserModule.sync({ force: false })
+//   .then(() => {
+//     console.log('user table created successfully');
+//   })
+//   .catch((error) => {
+//     console.error( 'Error creating table "users" in database:', error);
+>>>>>>> 9984261c39f9a9ff686d3fb1d4e892707f856393:Servidor-Express/src/model/user.module.js
 //   });
 
 export default UserModule;

@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import db from "./../database/db.js";
+import db from "../db.js";
 
 const peopleModule = db.define(
   "people",
@@ -15,19 +15,19 @@ const peopleModule = db.define(
       allowNull: true,
       unique: true,
     },
-    nombre: {
+    name: {
       type: DataTypes.STRING(100),
       allowNull: false,
     },
-    apellido: {
+    lastName: {
       type: DataTypes.STRING(20),
       allowNull: false,
     },
-    direccion: {
+    address: {
       type: DataTypes.STRING(200),
       allowNull: true,
     },
-    contacto: {
+    contact: {
       type: DataTypes.STRING(20),
       allowNull: true,
     },
@@ -36,11 +36,11 @@ const peopleModule = db.define(
       allowNull: true,
       unique: true,
     },
-    fecha_nacimiento: {
+    dateOfBirth: {
       type: DataTypes.DATEONLY,
       allowNull: true,
     },
-    edad: {
+    age: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
@@ -50,12 +50,14 @@ const peopleModule = db.define(
     },
   },
   {
-    tableName: "personas",
+    tableName: "people",
     timestamps: false,
   }
 );
 
+
 //Sincroniza el modelo con la base de datos
+<<<<<<< HEAD:Servidor-Express/model/people.module.js
 peopleModule
   .sync({ force: false })
   .then(() => {
@@ -88,6 +90,15 @@ peopleModule
 //   })
 //   .catch(error => {
 //     console.error('Error al insertar registro:', error);
+=======
+// peopleModule
+//   .sync({ force: false })
+//   .then(() => {
+//     console.log('people table created successfully');
+//   })
+//   .catch((error) => {
+//     console.error('Error creating table people in database ', error );
+>>>>>>> 9984261c39f9a9ff686d3fb1d4e892707f856393:Servidor-Express/src/model/people.module.js
 //   });
 
 export default peopleModule;
