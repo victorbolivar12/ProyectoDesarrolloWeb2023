@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { request } from "../../api";
 import { useAuth } from "../../hooks";
+import { enqueueSnackbar } from "notistack";
 
 const Action = () => {
   const validationSchema = yup.object({
@@ -15,7 +16,7 @@ const Action = () => {
       .required("Password es requerido"),
   });
 
-  const { setUser, setAuth } = useAuth();
+  const { setUser, setAuth, setPerson } = useAuth();
 
   const formik = useFormik({
     initialValues: {
@@ -30,11 +31,19 @@ const Action = () => {
   });
 
   const signIn = async (values) => {
-    console.log(values);
-
     const resp = await request.auth.signIn(values);
-    console.log(resp);
-
+    if (resp.person) {
+      setUser(resp.user);
+      setAuth({ isAuthenticated: true });
+      setPerson(resp.person);
+      enqueueSnackbar("Usuario inicio sesión correctamente", {
+        variant: "success",
+      });
+    } else {
+      enqueueSnackbar("Error al iniciar sesión", {
+        variant: "error",
+      });
+    }
   };
 
   return { formik };

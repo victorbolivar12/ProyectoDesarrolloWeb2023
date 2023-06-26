@@ -56,17 +56,17 @@ const peopleModule = db.define(
 );
 
 //Sincroniza el modelo con la base de datos
-// peopleModule
-//   .sync({ force: false })
-//   .then(() => {
-//     console.log('Tabla "personas" creada en la base de datos');
-//   })
-//   .catch((error) => {
-//     console.error(
-//       'Error al crear la tabla "personas" en la base de datos:',
-//       error
-//     );
-//   });
+peopleModule
+  .sync({ force: false })
+  .then(() => {
+    console.log('Tabla "personas" creada en la base de datos');
+  })
+  .catch((error) => {
+    console.error(
+      'Error al crear la tabla "personas" en la base de datos:',
+      error
+    );
+  });
 
 // const newPeople = {
 //   DNI: 12345678,

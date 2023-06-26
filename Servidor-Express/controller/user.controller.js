@@ -5,6 +5,13 @@ export const createUserWithPerson = async (req, res) => {
   const { nombre, apellido, email, contraseña } = req.body;
 
   try {
+    const person = await peopleModule.findOne({ where: { email } });
+    // Si la persona no existe, devuelve un mensaje de error
+    if (person) {
+      return res
+        .status(400)
+        .json({ message: "Este correo ya esta registrado" });
+    }
     // Crear la persona en la tabla personas
     const newPerson = await peopleModule.create({
       nombre,
@@ -24,7 +31,9 @@ export const createUserWithPerson = async (req, res) => {
     return res.status(201).json(newUser);
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: "Error al crear el usuario y la persona" });
+    return res
+      .status(500)
+      .json({ message: "Error al crear el usuario y la persona" });
   }
 };
 

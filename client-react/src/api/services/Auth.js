@@ -2,7 +2,7 @@ import { request } from "../base";
 
 const endpoints = {
   post: "/auth",
-  signUp: "/api/user",
+  signUp: "/user",
   // logout: "/api/salir",
 };
 
@@ -12,8 +12,12 @@ export const signIn = async (payload) => {
 };
 
 export const signUp = async (payload) => {
-  const res = await request.post(endpoints.signUp, payload);
-  return res.data;
+  try {
+    const res = await request.post(endpoints.signUp, payload);
+    return res.data;
+  } catch (error) {
+    return error;
+  }
 };
 
 // export const logOut = async () => {

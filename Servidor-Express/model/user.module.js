@@ -45,16 +45,16 @@ UserModule.prototype.validPassword = async function (password) {
 };
 
 //Sincroniza el modelo con la base de datos
-// UserModule.sync({ force: false })
-//   .then(() => {
-//     console.log('Tabla "usuarios" creada en la base de datos');
-//   })
-//   .catch((error) => {
-//     console.error(
-//       'Error al crear la tabla "usuarios" en la base de datos:',
-//       error
-//     );
-//   });
+UserModule.sync({ force: false })
+  .then(() => {
+    console.log('Tabla "usuarios" creada en la base de datos');
+  })
+  .catch((error) => {
+    console.error(
+      'Error al crear la tabla "usuarios" en la base de datos:',
+      error
+    );
+  });
 
 // const newUser = {
 //   username: "juanperez13",

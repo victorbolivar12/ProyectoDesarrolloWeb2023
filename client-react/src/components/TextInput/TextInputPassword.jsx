@@ -50,7 +50,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export const TextInputPassword = ({ helperText, fullWidth, ...props }) => {
+export const TextInputPassword = ({ helperText, fullWidth, link, ...props }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -61,7 +61,7 @@ export const TextInputPassword = ({ helperText, fullWidth, ...props }) => {
           {props.label}
         </InputLabel>
 
-        {props.link ? (
+        {link ? (
           <Link
             href="#"
             color="inherit"
