@@ -42,3 +42,32 @@ export const getUsers = async (req, res) => {
     res.status(400).json({ message: "Internal server error" });
   }
 };
+
+// GET /users/:id
+export const getUserById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await UserModule.findByPk(id);
+    if (user) {
+      res.json(user);
+    } else {
+      res.status(404).json({ message: "User not found" });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+// DELETE /users/:id
+export const deleteUser = async (req, res) => {
+  try {
+    await UserModule.destroy({where:{user_id: req.params.id}})
+    res.json({
+      "message": "Record deleted successfully"
+    })
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};

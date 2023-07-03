@@ -44,14 +44,4 @@ UserModule.prototype.validPassword = async function (password) {
   return this.password === password;
 };
 
-
-// Sincroniza el modelo con la base de datos
-// UserModule.sync({ force: false })
-//   .then(() => {
-//     console.log('user table created successfully');
-//   })
-//   .catch((error) => {
-//     console.error( 'Error creating table "users" in database:', error);
-//   });
-
 export default UserModule;

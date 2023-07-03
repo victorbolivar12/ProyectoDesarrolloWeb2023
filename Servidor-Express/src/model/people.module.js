@@ -56,14 +56,4 @@ const peopleModule = db.define(
 );
 
 
-//Sincroniza el modelo con la base de datos
-// peopleModule
-//   .sync({ force: false })
-//   .then(() => {
-//     console.log('people table created successfully');
-//   })
-//   .catch((error) => {
-//     console.error('Error creating table people in database ', error );
-//   });
-
 export default peopleModule;
