@@ -1,5 +1,5 @@
 import * as React from "react";
-import { CssBaseline, Paper, Box, Grid, Typography } from "@mui/material";
+import { Paper, Box, Grid, Typography } from "@mui/material";
 import bg from "../../assets/login-bg.jpg";
 import {
   CustomBottom,
@@ -12,7 +12,6 @@ import {
 const View = ({ formik }) => {
   return (
     <Grid container component="main" sx={{ height: "100vh" }}>
-      <CssBaseline />
       <Grid
         item
         xs={false}
@@ -81,6 +80,7 @@ const View = ({ formik }) => {
               label="Password"
               placeholder={"Ingresa tu contraseña"}
               margin="dense"
+              link={true}
               fullWidth={true}
               value={formik.values.password}
               onChange={formik.handleChange}
@@ -96,6 +96,7 @@ const View = ({ formik }) => {
               sx={{
                 mt: 10,
                 mb: 2,
+                borderRadius:"40px",
                 backgroundImage:
                   "linear-gradient(180deg, #8AE0FB 0%, #3371EB 100%)",
               }}

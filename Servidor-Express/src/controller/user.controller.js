@@ -6,7 +6,18 @@ export const createUserWithPerson = async (req, res) => {
   const { name, lastName, email, password } = req.body;
 
   try {
+<<<<<<< HEAD:Servidor-Express/controller/user.controller.js
+    const person = await peopleModule.findOne({ where: { email } });
+    // Si la persona no existe, devuelve un mensaje de error
+    if (person) {
+      return res
+        .status(400)
+        .json({ message: "Este correo ya esta registrado" });
+    }
+    // Crear la persona en la tabla personas
+=======
     // Create a person in the 'people' table
+>>>>>>> 9984261c39f9a9ff686d3fb1d4e892707f856393:Servidor-Express/src/controller/user.controller.js
     const newPerson = await peopleModule.create({
       name,
       lastName,
@@ -28,7 +39,13 @@ export const createUserWithPerson = async (req, res) => {
     return res.status(201).json(newUser);
   } catch (error) {
     console.error(error);
+<<<<<<< HEAD:Servidor-Express/controller/user.controller.js
+    return res
+      .status(500)
+      .json({ message: "Error al crear el usuario y la persona" });
+=======
     return res.status(400).json({ message: "Error creating user and person" });
+>>>>>>> 9984261c39f9a9ff686d3fb1d4e892707f856393:Servidor-Express/src/controller/user.controller.js
   }
 };
 

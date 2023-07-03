@@ -1,5 +1,5 @@
 import * as React from "react";
-import { CssBaseline, Paper, Box, Grid, Typography } from "@mui/material";
+import { Paper, Box, Grid, Typography } from "@mui/material";
 import bg from "../../assets/login-bg.jpg";
 import {
   CustomBottom,
@@ -12,7 +12,6 @@ import {
 const View = ({ formik }) => {
   return (
     <Grid container component="main" sx={{ height: "100vh" }}>
-      <CssBaseline />
       <Grid
         item
         xs={false}
@@ -63,15 +62,15 @@ const View = ({ formik }) => {
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextInput
-                 id="name"
-                 name={"name"}
-                 label={"Nombre"}
-                 placeholder={"Ingresa tu nombre"}
-                 fullWidth={true}
-                 value={formik.values.name}
-                 onChange={formik.handleChange}
-                 error={formik.touched.name && Boolean(formik.errors.name)}
-                 helperText={formik.touched.name && formik.errors.name}
+                  id="name"
+                  name={"name"}
+                  label={"Nombre"}
+                  placeholder={"Ingresa tu nombre"}
+                  fullWidth={true}
+                  value={formik.values.name}
+                  onChange={formik.handleChange}
+                  error={formik.touched.name && Boolean(formik.errors.name)}
+                  helperText={formik.touched.name && formik.errors.name}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -83,7 +82,9 @@ const View = ({ formik }) => {
                   fullWidth={true}
                   value={formik.values.lastName}
                   onChange={formik.handleChange}
-                  error={formik.touched.lastName && Boolean(formik.errors.lastName)}
+                  error={
+                    formik.touched.lastName && Boolean(formik.errors.lastName)
+                  }
                   helperText={formik.touched.lastName && formik.errors.lastName}
                 />
               </Grid>
@@ -110,7 +111,9 @@ const View = ({ formik }) => {
                   link={false}
                   value={formik.values.password}
                   onChange={formik.handleChange}
-                  error={formik.touched.password && Boolean(formik.errors.password)}
+                  error={
+                    formik.touched.password && Boolean(formik.errors.password)
+                  }
                   helperText={formik.touched.password && formik.errors.password}
                 />
               </Grid>
@@ -124,8 +127,14 @@ const View = ({ formik }) => {
                   fullWidth={true}
                   value={formik.values.confirmPassword}
                   onChange={formik.handleChange}
-                  error={formik.touched.confirmPassword && Boolean(formik.errors.confirmPassword)}
-                  helperText={formik.touched.confirmPassword && formik.errors.confirmPassword}
+                  error={
+                    formik.touched.confirmPassword &&
+                    Boolean(formik.errors.confirmPassword)
+                  }
+                  helperText={
+                    formik.touched.confirmPassword &&
+                    formik.errors.confirmPassword
+                  }
                 />
               </Grid>
             </Grid>
@@ -138,6 +147,7 @@ const View = ({ formik }) => {
               sx={{
                 mt: 10,
                 mb: 2,
+                borderRadius:"40px",
                 backgroundImage:
                   "linear-gradient(180deg, #8AE0FB 0%, #3371EB 100%)",
               }}
@@ -146,7 +156,7 @@ const View = ({ formik }) => {
           <Typography variant="body2" gutterBottom sx={{ mt: "auto" }}>
             ¿Tienes una cuenta?{" "}
             <Link
-              href={"/"}
+              href={"/login"}
               variant="subtitle2"
               color="inherit"
               underline="none"
