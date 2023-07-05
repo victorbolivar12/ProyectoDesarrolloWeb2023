@@ -18,11 +18,12 @@ app.use("/user", userRoutes)
 try {
   await db.authenticate()
   console.log('Successful connection to the database');
+  createTables();
 } catch (error) {
   console.log(`Error: ${error}`);
 }
 
-createTables();
+
 
 app.get('/', (req, res) => {
   res.send({
