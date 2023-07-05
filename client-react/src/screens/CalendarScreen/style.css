@@ -1,0 +1,185 @@
+
+:root{
+    --principal-color: #4081EE;
+    --second-color: #8AE0FB;
+    --third-color: #ECECEC;
+    --text-color: black;
+    --text-second: white;
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.line{
+    width: 100%;
+    background-color: rgba(106, 104, 104, 0.648);
+    height: 1px;
+}
+
+.calendar{
+    display:flex;
+    gap: 10px;
+}
+table{
+    width: 80%;
+    height: 60vh;
+    box-shadow: 2px 0px 5px 2px rgba(98, 97, 97, 0.402);
+    
+}
+table, th, td{
+    color: #555;
+    table-layout: fixed;
+    text-align: center;
+    font-size: 20px;
+    border-collapse: collapse;
+    border: 1px solid gray;
+  
+}
+th{
+    background: rgb(176, 169, 169);
+}
+td:hover{
+    background: var(--second-color);
+}
+
+
+section{
+    margin-left: 10px;
+    margin-top: 76px;
+}
+
+.line{
+    width: 100%;
+    background-color: rgba(106, 104, 104, 0.648);
+    height: 1px;
+}
+
+.calendar{
+    display:flex;
+    gap: 10px;
+}
+
+
+.month{
+    color: white;
+}
+
+.lateral-calendar{
+   
+    padding-top: 10px;
+    width: 20%;
+    height: 80vh;
+    background-color: var(--third-color);  
+    
+}
+
+
+h1 {
+    font-size: 1.3rem;
+    margin-left: 1rem;
+}
+
+
+.week{
+    
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    padding: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+   
+}
+.days{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    padding: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+li{
+   
+    text-align: center;
+    border-radius: 50%;
+}
+.inactive{
+    color: rgba(166, 161, 161, 0.501);
+}
+.day-name{
+    font-size: 1rem;
+    font-weight: 100;
+    text-align: center;
+}
+.title{
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+}
+.icon #prev {
+    cursor: pointer;
+}
+
+.icon #next {
+    cursor: pointer;
+}
+img{
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+   
+}
+
+.calendar .days li{
+    cursor: pointer;
+    z-index: 1;
+
+}
+
+
+.days li:hover{
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    z-index: 1;
+    background: var(--second-color);
+}
+
+.lateral-box{
+    display: flex;
+    margin: 8px;
+    width: 95%;
+    height: 8vh;
+    padding-left: 1.8rem;
+    font-size: 1.2rem;
+}
+.lateral-box p{
+    font-size: 0.8rem;
+    margin-left: 2.5rem;
+}
+.lateral-box .little-box p{
+    font-size: 0.6rem;
+    margin-right: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+.line2{
+    width: 2px;
+    margin-left: 1.1rem;
+    background-color: var(--second-color);
+    height: 100%;
+}
+.lateral-box-publi{
+    margin: 8px;
+    width: 94%;
+    height: 18vh;
+    padding-left: 1.8rem;
+     background-image: url(icon/publicidad.jpg);
+     background-size: 260px;
+}

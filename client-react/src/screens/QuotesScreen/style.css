@@ -1,0 +1,103 @@
+
+:root{
+    --principal-color: #4081EE;
+    --second-color: #8AE0FB;
+    --third-color: #ECECEC;
+    --text-color: black;
+    --text-second: white;
+}
+
+.rigth-form{
+    margin-left: 15rem;
+    margin-top: 1px;
+    display: flex;
+    width: 60%;
+    height: 85vh;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em 0.2em;
+    box-shadow: 0 80px 70px rgba(0, 0, 0, 0.20);
+    border-radius: 5px;
+   
+}
+.figure-main{
+    background-size: cover;
+    width: 50%;
+    height: 84.7vh;
+    overflow: hidden;
+}
+.figure-main img{
+  width: 95%;
+  height: 85.5vh;
+
+}
+
+form {
+   width: 50%;
+}
+
+.form-register{
+    margin-bottom: 1rem;
+   
+}
+.form-register label{
+    margin-bottom: 0.5rem;
+}
+.form-register input{
+  padding: 0.4rem;
+  width: 80%;
+  border-radius: 10px;
+  border: none;
+  background: var(--third-color);
+
+}
+.tlf input{
+  width: 60%;
+}
+.tlf button{
+  padding: 0.3rem 1rem;  
+  border: none;
+  border-radius: 5px;
+  background-color: var(--principal-color);
+  color: var(--text-second);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+.form-register-radio{
+    display: flex;
+    margin-bottom: 1rem;
+}
+.radio{
+    padding-right: 2rem;
+    padding: 0.5rem;
+    background-color: var(--third-color);
+    border-radius: 10px;
+    margin-right: 2rem;
+}
+.btnRegister input {
+   margin-top: 1.5rem;
+   width: 85%;
+   height: 40px;
+   border: none;
+   border-radius: 20px;
+   background: var(--principal-color);
+   color: var(--text-second);
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+.btnRegister button{
+    margin-top: 1.5rem;
+    width: 85%;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background: var(--principal-color);
+    color: var(--text-second);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+ }
+.title-register{
+   width: 100%;
+   font-size: 20px;
+
+   margin-bottom: 2rem; 
+   margin-top: 1rem;
+}
