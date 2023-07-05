@@ -4,7 +4,7 @@ import db from "../db.js";
 const peopleModule = db.define(
   "people",
   {
-    id: {
+    people_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -20,7 +20,7 @@ const peopleModule = db.define(
       allowNull: false,
     },
     lastName: {
-      type: DataTypes.STRING(20),
+      type: DataTypes.STRING(100),
       allowNull: false,
     },
     address: {

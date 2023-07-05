@@ -1,9 +1,10 @@
 import UserModule from "../model/user.module.js";
 import peopleModule from "../model/people.module.js";
+import RoleModule from "../model/roles.module.js";
 import bcrypt from 'bcrypt';
 
 export const createUserWithPerson = async (req, res) => {
-  const { name, lastName, email, password } = req.body;
+  const { name, lastName, email, password,rol_id } = req.body;
 
   try {
     const person = await peopleModule.findOne({ where: { email } });
@@ -18,6 +19,7 @@ export const createUserWithPerson = async (req, res) => {
       name,
       lastName,
       email,
+      status: "Activo"
     });
 
     // Encrypt password
@@ -28,7 +30,8 @@ export const createUserWithPerson = async (req, res) => {
       username: email,
       password: hashedPassword,
       entry_date: new Date(),
-      person_id: newPerson.id,
+      person_id: newPerson.people_id,
+      rol_id
     });
 
     // Return the newly created user as a response
@@ -44,14 +47,25 @@ export const createUserWithPerson = async (req, res) => {
 // GET /users
 export const getUsers = async (req, res) => {
   try {
-    const users = await UserModule.findAll();
+    const users = await UserModule.findAll({
+      attributes: ["username", "entry_date"],
+      include: [
+        {
+          model: peopleModule,
+          attributes: ["name", "lastName", "status"],
+        },
+        {
+          model: RoleModule,
+          attributes: ["rol_name"],
+        },
+      ],
+    });
     res.json(users);
   } catch (error) {
     console.error(error);
     res.status(400).json({ message: "Internal server error" });
   }
 };
-
 // GET /users/:id
 export const getUserById = async (req, res) => {
   try {

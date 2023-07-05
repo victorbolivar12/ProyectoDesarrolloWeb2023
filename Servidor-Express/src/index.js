@@ -2,6 +2,7 @@ import app from './app.js';
 import * as dotenv from 'dotenv'
 import db from './db.js'
 import createTables from './lib/initializeTables.js'
+import runSeeders from './seeders/loadSeeder.js';
 
 dotenv.config()
 
@@ -14,16 +15,15 @@ app.use("/auth", authRoutes)
 // Add the user paths
 app.use("/user", userRoutes)
 
-//Define the connection to the database
+//defines functions that start with the server
 try {
   await db.authenticate()
   console.log('Successful connection to the database');
-  createTables();
+  await createTables();
+  await runSeeders();
 } catch (error) {
   console.log(`Error: ${error}`);
 }
-
-
 
 app.get('/', (req, res) => {
   res.send({
