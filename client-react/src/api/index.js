@@ -1,6 +1,7 @@
 import { request } from "./base";
-import { Auth } from "./services";
+import { Auth, User } from "./services";
 
 request.auth = Auth;
+request.users = User;
 
 export { request };

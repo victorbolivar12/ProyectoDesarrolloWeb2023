@@ -3,6 +3,7 @@ import * as yup from "yup";
 import { request } from "../../api";
 import { useAuth } from "../../hooks";
 import { enqueueSnackbar } from "notistack";
+import { useNavigate } from "react-router-dom";
 
 const Action = () => {
   const validationSchema = yup.object({
@@ -15,7 +16,7 @@ const Action = () => {
       .min(8, "Password debe tener una longitud mínima de 8 caracteres")
       .required("Password es requerido"),
   });
-
+  const navigate = useNavigate();
   const { setUser, setAuth, setPerson } = useAuth();
 
   const formik = useFormik({
@@ -25,22 +26,23 @@ const Action = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      // alert(JSON.stringify(values, null, 2));
       signIn(values);
     },
   });
 
   const signIn = async (values) => {
     const resp = await request.auth.signIn(values);
-    if (resp.person) {
-      setUser(resp.user);
-      setAuth({ isAuthenticated: true });
-      setPerson(resp.person);
+    console.log(resp);
+    if (resp.statusCode == 200) {
+      setUser(resp.data.user);
+      setAuth({ isAuthenticated: true, token: resp.data.token });
+      setPerson(resp.data.person);
       enqueueSnackbar("Usuario inicio sesión correctamente", {
         variant: "success",
       });
+      navigate("/dashboard", { replace: true });
     } else {
-      enqueueSnackbar("Error al iniciar sesión", {
+      enqueueSnackbar(resp.response?.data?.message, {
         variant: "error",
       });
     }

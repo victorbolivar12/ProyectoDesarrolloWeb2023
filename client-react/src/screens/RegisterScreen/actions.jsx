@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { request } from "../../api";
 import { enqueueSnackbar } from "notistack";
+import { useNavigate } from "react-router-dom";
 const Action = () => {
   const validationSchema = yup.object({
     name: yup.string("Ingresa tu nombre").required("Nombre es requerido"),
@@ -21,20 +22,20 @@ const Action = () => {
       .min(8, "Password debe tener una longitud mínima de 8 caracteres")
       .required("Password es requerido"),
   });
+
+  const navigate = useNavigate();
+
   const signUp = async (values) => {
     if (values.password == values.confirmPassword) {
-      const resp = await request.auth.signUp({
-        nombre: values.name,
-        apellido: values.lastName,
-        email: values.email,
-        contraseña: values.password,
-      });
-      if (resp.user) {
+      const resp = await request.auth.signUp({ ...values, rol_id: 2 });
+      console.log(resp);
+      if (resp.statusCode == 201) {
         enqueueSnackbar("Usuario registrado correctamente", {
           variant: "success",
         });
+        navigate("/login", { replace: true });
       } else {
-        enqueueSnackbar(resp.response.data.message, {
+        enqueueSnackbar(resp.response?.data?.message, {
           variant: "error",
         });
       }

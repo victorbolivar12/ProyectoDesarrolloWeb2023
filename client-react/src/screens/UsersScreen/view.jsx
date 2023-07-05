@@ -4,14 +4,18 @@ import { Box, Typography, IconButton } from "@mui/material";
 import { Delete, Edit } from "@mui/icons-material";
 
 const columns = [
-  { field: "id", headerName: "ID", width: 200 },
-  { field: "firstName", headerName: "Primer nombre", width: 200 },
-  { field: "lastName", headerName: "Primer apellido", width: 200 },
+  { field: "username", headerName: "Username", width: 250 },
   {
-    field: "age",
-    headerName: "Edad",
-    type: "number",
+    field: "firstName",
+    headerName: "Primer nombre",
     width: 200,
+    valueGetter: (params) => `${params.row.person?.name || ""}`,
+  },
+  {
+    field: "lastName",
+    headerName: "Primer apellido",
+    width: 200,
+    valueGetter: (params) => `${params.row.person?.lastName || ""}`,
   },
   {
     field: "fullName",
@@ -20,7 +24,14 @@ const columns = [
     sortable: false,
     width: 200,
     valueGetter: (params) =>
-      `${params.row.firstName || ""} ${params.row.lastName || ""}`,
+      `${params.row.person?.firstName || ""} ${
+        params.row.person?.lastName || ""
+      }`,
+  },
+  {
+    field: "entry_date",
+    headerName: "Fecha de creación",
+    width: 200,
   },
   {
     field: "action",
@@ -58,7 +69,7 @@ const rows = [
   { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
 ];
 
-const View = ({}) => {
+const View = ({ data }) => {
   return (
     <Box height={"100%"}>
       <Typography component="h1" variant="h4" fontWeight={700}>
@@ -67,8 +78,9 @@ const View = ({}) => {
       <Box mt={3} />
       <div style={{ height: 400, width: "100%" }}>
         <DataGrid
-          rows={rows}
+          rows={data}
           columns={columns}
+          getRowId={(row) => row.username}
           initialState={{
             pagination: {
               paginationModel: { page: 0, pageSize: 5 },

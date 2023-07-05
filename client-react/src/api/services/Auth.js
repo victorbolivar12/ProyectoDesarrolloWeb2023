@@ -7,14 +7,18 @@ const endpoints = {
 };
 
 export const signIn = async (payload) => {
-  const res = await request.post(endpoints.post, payload);
-  return res.data;
+  try {
+    const res = await request.post(endpoints.post, payload);
+    return { data: res.data, statusCode: res.status };
+  } catch (error) {
+    return error;
+  }
 };
 
 export const signUp = async (payload) => {
   try {
     const res = await request.post(endpoints.signUp, payload);
-    return res.data;
+    return { data: res.data, statusCode: res.status };
   } catch (error) {
     return error;
   }

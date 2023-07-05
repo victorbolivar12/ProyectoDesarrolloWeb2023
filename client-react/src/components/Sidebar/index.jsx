@@ -24,6 +24,7 @@ import {
   AccountCircle,
 } from "@mui/icons-material";
 import { Link } from "../Link";
+import { useAuth } from "../../hooks";
 
 const drawerWidth = 240;
 
@@ -62,7 +63,8 @@ export const Sidebar = (props) => {
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
+  const { logOut } = useAuth();
+  
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -151,8 +153,7 @@ export const Sidebar = (props) => {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
+            <MenuItem onClick={logOut}>Cerrar Sesión</MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>

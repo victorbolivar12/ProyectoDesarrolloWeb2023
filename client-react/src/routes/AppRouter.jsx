@@ -6,6 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { Sidebar } from "../components";
+import { useAuth } from "../hooks";
 const LoginScreen = lazy(() => import("../screens/LoginScreen"));
 const AboutUsScreen = lazy(() => import("../screens/AboutUsScreen"));
 const ServicesScreen = lazy(() => import("../screens/ServicesScreen"));
@@ -18,21 +19,21 @@ const QuotesScreen = lazy(() => import("../screens/QuotesScreen"));
 const TherapiesScreen = lazy(() => import("../screens/TherapiesScreen"));
 const UsersScreen = lazy(() => import("../screens/UsersScreen"));
 
-// const Protected = ({ children }) => {
-//   const { auth } = useAuth();
+const Protected = ({ children }) => {
+  const { auth } = useAuth();
 
-//   if (!auth?.isAuthenticated) {
-//     return <Navigate to="/" replace />;
-//   }
-//   return children;
-// };
+  if (!auth?.isAuthenticated) {
+    return <Navigate to="/" replace />;
+  }
+  return children;
+};
 
 const IsLoggedIn = ({ children }) => {
-  //   const { auth } = useAuth();
+  const { auth } = useAuth();
 
-  //   if (auth?.isAuthenticated) {
-  //     return <Navigate to="/inicio/movimientos" replace />;
-  //   }
+  if (auth?.isAuthenticated) {
+    return <Navigate to="/dashboard" replace />;
+  }
   return children;
 };
 
@@ -91,51 +92,51 @@ export const AppRouter = () => {
         <Route
           path="/dashboard"
           element={
-            <IsLoggedIn>
+            <Protected>
               <Sidebar>
                 <DashboardScreen />
               </Sidebar>
-            </IsLoggedIn>
+            </Protected>
           }
         />
         <Route
           path="/dashboard/calendar"
           element={
-            <IsLoggedIn>
+            <Protected>
               <Sidebar>
                 <CalendarScreen />
               </Sidebar>
-            </IsLoggedIn>
+            </Protected>
           }
         />
         <Route
           path="/dashboard/therapies"
           element={
-            <IsLoggedIn>
+            <Protected>
               <Sidebar>
                 <TherapiesScreen />
               </Sidebar>
-            </IsLoggedIn>
+            </Protected>
           }
         />
         <Route
           path="/dashboard/quotes"
           element={
-            <IsLoggedIn>
+            <Protected>
               <Sidebar>
                 <QuotesScreen />
               </Sidebar>
-            </IsLoggedIn>
+            </Protected>
           }
         />
         <Route
           path="/dashboard/users"
           element={
-            <IsLoggedIn>
+            <Protected>
               <Sidebar>
                 <UsersScreen />
               </Sidebar>
-            </IsLoggedIn>
+            </Protected>
           }
         />
       </Routes>
