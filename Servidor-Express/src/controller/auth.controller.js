@@ -13,15 +13,15 @@ export const login = async (req, res) => {
       return res.status(401).json({ message: "invalid credentials" });
     }
 
-    const user = await UserModule.findOne({ where: { person_id: person.id } });
- 
+    const user = await UserModule.findOne({ where: { person_id: person.people_id } });
+
     if (user) {
       const isPasswordValid = await bcrypt.compare(password, user.password);
       if (isPasswordValid) {
         const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
-          expiresIn: "1h",
+          expiresIn: "24h",
         });
-        return res.status(200).json({ token });
+        return res.status(200).json({ token, person, user });
       } else {
         return res.status(401).json({ message: "invalid credentials" });
       }
