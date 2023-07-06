@@ -82,6 +82,28 @@ export const getUserById = async (req, res) => {
   }
 };
 
+// PUT /users/:id
+export const updateUser = async (req, res) => {
+  try {
+    const { password, ...userData } = req.body;
+
+    // Encrypt password if provided
+    if (password) {
+      const saltRounds = 10;
+      const hashedPassword = await bcrypt.hash(password, saltRounds);
+      userData.password = hashedPassword;
+    }
+
+    await UserModule.update(userData, { where: { user_id: req.params.id } });
+    res.json({
+      message: "User updated successfully",
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
 // DELETE /users/:id
 export const deleteUser = async (req, res) => {
   try {
