@@ -19,6 +19,7 @@ const QuotesScreen = lazy(() => import("../screens/QuotesScreen"));
 const TherapiesScreen = lazy(() => import("../screens/TherapiesScreen"));
 const UsersScreen = lazy(() => import("../screens/UsersScreen"));
 const PayScreen = lazy(() => import("../screens/PayScreen"));
+const UpdateProfileScreen = lazy(() => import("../screens/UpdateProfileScreen"));
 
 const Protected = ({ children }) => {
   const { auth } = useAuth();
@@ -98,6 +99,16 @@ export const AppRouter = () => {
                 <DashboardScreen />
               </Sidebar>
             </Protected>
+          }
+        />
+        <Route
+          path="/dashboard/updateprofile"
+          element={
+            //<Protected>
+              <Sidebar>
+                <UpdateProfileScreen />
+              </Sidebar>
+            //</Protected>
           }
         />
         <Route
