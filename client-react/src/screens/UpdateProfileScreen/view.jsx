@@ -33,7 +33,7 @@ const View = ({ formik }) => {
             height: "100%",
           }}
         >
-          <Typography component="h1" variant="h4" fontWeight={700}>
+          <Typography component="h1" variant="h4" fontWeight={700} sx={{mb:5}}>
             Actualizar Perfil
           </Typography>
           <Box
@@ -46,7 +46,7 @@ const View = ({ formik }) => {
                 <TextInput
                   id="name"
                   name={"name"}
-                  label={"NOMBRE"}
+                  label={"Nombre"}
                   placeholder={"Ingresa tu nombre"}
                   fullWidth={true}
                   value={formik.values.name}
@@ -59,7 +59,7 @@ const View = ({ formik }) => {
                 <TextInput
                   id="lastName"
                   name={"lastName"}
-                  label={"APELLIDO"}
+                  label={"Apellido"}
                   placeholder={"Ingresa tu apellido"}
                   fullWidth={true}
                   value={formik.values.lastName}
@@ -74,7 +74,7 @@ const View = ({ formik }) => {
                 <TextInput
                   id="email"
                   name={"email"}
-                  label={"EMAIL"}
+                  label={"Email"}
                   placeholder={"Ingresa tu email"}
                   fullWidth={true}
                   value={formik.values.email}
@@ -87,7 +87,7 @@ const View = ({ formik }) => {
                 <TextInput
                   id="birthDate"
                   name={"birthDate"}
-                  label={"FECHA DE NACIMIENTO"}
+                  label={"Fecha de nacimiento"}
                   placeholder={"Ingresa tu fecha de nacimiento"}
                   fullWidth={true}
                   value={formik.values.birthDate}
@@ -100,7 +100,7 @@ const View = ({ formik }) => {
                 <TextInput
                   id="edad"
                   name={"age"}
-                  label={"EDAD"}
+                  label={"Edad"}
                   placeholder={"Edad"}
                   fullWidth={true}
                   value={formik.values.age}
@@ -126,7 +126,7 @@ const View = ({ formik }) => {
                 <TextInput
                   id="contact"
                   name={"contact"}
-                  label={"CONTACTO"}
+                  label={"Contacto"}
                   placeholder={"Ingresa tu Contacto"}
                   fullWidth={true}
                   value={formik.values.contact}
@@ -139,7 +139,7 @@ const View = ({ formik }) => {
                 <TextInput
                   id="address"
                   name={"address"}
-                  label={"DIRECCION"}
+                  label={"Direccion"}
                   placeholder={"Ingresa tu Dirección"}
                   fullWidth={true}
                   value={formik.values.address}
