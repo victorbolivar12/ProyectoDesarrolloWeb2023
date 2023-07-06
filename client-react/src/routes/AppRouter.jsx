@@ -18,6 +18,7 @@ const CalendarScreen = lazy(() => import("../screens/CalendarScreen"));
 const QuotesScreen = lazy(() => import("../screens/QuotesScreen"));
 const TherapiesScreen = lazy(() => import("../screens/TherapiesScreen"));
 const UsersScreen = lazy(() => import("../screens/UsersScreen"));
+const PayScreen = lazy(() => import("../screens/PayScreen"));
 
 const Protected = ({ children }) => {
   const { auth } = useAuth();
@@ -117,6 +118,16 @@ export const AppRouter = () => {
                 <TherapiesScreen />
               </Sidebar>
             </Protected>
+          }
+        />
+        <Route
+          path="/dashboard/pay"
+          element={
+              <Protected>
+                <Sidebar>
+                  <PayScreen />
+                </Sidebar>
+              </Protected>
           }
         />
         <Route

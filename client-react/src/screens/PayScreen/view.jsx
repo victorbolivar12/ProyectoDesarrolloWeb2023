@@ -5,25 +5,11 @@ import { Delete, Edit } from "@mui/icons-material";
 
 const columns = [
   { field: "id", headerName: "ID", width: 200 },
-  { field: "treatmentType", headerName: "Tipo de Tratamiento", width: 200 },
-  { field: "psychologist", headerName: "Psicólogo", width: 200 },
-  { field: "therapist", headerName: "Terapeuta", width: 200 },
-  {
-    field: "therapyDate",
-    headerName: "Fecha Terapia",
-    type: "date",
-    width: 200,
-  },
-  {
-    field: "results",
-    headerName: "Resultados",
-    width: 200,
-  },
-  {
-    field: "observations",
-    headerName: "Observaciones",
-    width: 200,
-  },
+  { field: "quotes", headerName: "Citas", width: 200 },
+  { field: "dateHour", headerName: "Fecha_Hora", type: "date", width: 200 },
+  { field: "amount", headerName: "Monto", type: "number", width: 200 },
+  { field: "observations", headerName: "Observaciones", width: 200},
+  { field: "status", headerName: "Estado", width: 200},
   {
     field: "action",
     headerName: "Action",
@@ -49,17 +35,15 @@ const columns = [
 ];
 
 const rows = [
-  { id: 1, treatmentType: "terapia", psychologist: "Jon kele", therapist: "Maria Navarro",  
-  therapyDate: new Date(1995, 11, 17), results: "Necesita más terapia", observations: "Ninguna"},
-  { id: 2, treatmentType: "terapia", psychologist: "Jesús Parra", therapist: "Veronica Navas",  
-  therapyDate: new Date(1995, 11, 17), results: "Necesita más terapia", observations: "Ninguna"},
+  { id: 1, quotes: "primera cita", dateHour: new Date('December 17, 2023 03:24:00'), amount: 90.50, observations: "ninguno", status: "pago"},
+  { id: 1, quotes: "segunda cita", dateHour: new Date('July 08, 2023 03:24:00'), amount: 50.50, observations: "ninguno", status: "pago"},
 ];
 
 function View({ }) {
   return (
     <Box height={"100%"}>
       <Typography component="h1" variant="h4" fontWeight={700}>
-        Terapias Registradas
+       Pagos Registrados
       </Typography>
       <Box mt={3} />
       <div style={{ height: 400, width: "100%" }}>
