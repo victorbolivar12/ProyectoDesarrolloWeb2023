@@ -3,6 +3,7 @@ import UserModule from "../model/user.module.js";
 import peopleModule from "../model/people.module.js";
 import RoleModule from "../model/roles.module.js";
 
+
 async function createTableIfNotExists(model) {
   try {
     const tableExists = await db
@@ -12,10 +13,10 @@ async function createTableIfNotExists(model) {
 
     if (!tableExists) {
       await model.sync();
-      console.log(`Tabla ${model.tableName} creada exitosamente`);
+      console.log(`Table ${model.tableName} created successfully`);
     }
   } catch (error) {
-    console.error(`Error creando tabla ${model.tableName}:`, error);
+    console.error(`Error creating table ${model.tableName}:`, error);
   }
 }
 

@@ -8,12 +8,16 @@ dotenv.config()
 
 import authRoutes from "./routes/auth.route.js";
 import userRoutes from "./routes/user.route.js";
+import peopleRoutes from "./routes/people.route.js"
 
 // Add the authentication routes
 app.use("/auth", authRoutes)
 
 // Add the user paths
 app.use("/user", userRoutes)
+
+// Add the people paths
+app.use("/people", peopleRoutes)
 
 //defines functions that start with the server
 try {
