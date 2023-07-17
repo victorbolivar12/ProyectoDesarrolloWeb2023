@@ -44,120 +44,106 @@ export const AppRouter = () => {
         <Route
           path="/"
           element={
-            // <IsLoggedIn>
-            //   <LandingScreen />
-            // </IsLoggedIn>
-            <LandingScreen />
+            <IsLoggedIn>
+              <LandingScreen />
+            </IsLoggedIn>
           }
         />
         <Route
           path="/about-us"
           element={
-            // <IsLoggedIn>
-            //   <AboutUsScreen />
-            // </IsLoggedIn>
-            <AboutUsScreen />
+            <IsLoggedIn>
+              <AboutUsScreen />
+            </IsLoggedIn>
           }
         />
         <Route
           path="/services"
           element={
-            // <IsLoggedIn>
-            //   <ServicesScreen />
-            // </IsLoggedIn>
-            <ServicesScreen />
+            <IsLoggedIn>
+              <ServicesScreen />
+            </IsLoggedIn>
+            
           }
         />
         <Route
           path="/contact"
           element={
-            // <IsLoggedIn>
-            //   <ContactScreen />
-            // </IsLoggedIn>
-            <ContactScreen />
+            <IsLoggedIn>
+              <ContactScreen />
+            </IsLoggedIn>
+            
           }
         />
         <Route
           path="/login"
           element={
-            // <IsLoggedIn>
-            //   <LoginScreen />
-            // </IsLoggedIn>
-            <LoginScreen />
+            <IsLoggedIn>
+              <LoginScreen />
+            </IsLoggedIn>
+            
           }
         />
         <Route
           path="/register"
           element={
-            // <IsLoggedIn>
-            //   <RegisterScreen />
-            // </IsLoggedIn>
-            <RegisterScreen />
+            <IsLoggedIn>
+              <RegisterScreen />
+            </IsLoggedIn>
+            
           }
         />
         <Route
           path="/dashboard"
           element={
-            // <Protected>
-            //   <Sidebar>
-            //     <DashboardScreen />
-            //   </Sidebar>
-            // </Protected>
-            <Sidebar>
-              <DashboardScreen />
-            </Sidebar>
+            <Protected>
+              <Sidebar>
+                <DashboardScreen />
+              </Sidebar>
+            </Protected>
+            
           }
         />
         <Route
           path="/dashboard/calendar"
           element={
-            // <Protected>
-            //   <Sidebar>
-            //     <CalendarScreen />
-            //   </Sidebar>
-            // </Protected>
-            <Sidebar>
-              <CalendarScreen />
-            </Sidebar>
+            <Protected>
+              <Sidebar>
+                <CalendarScreen />
+              </Sidebar>
+            </Protected>
+            
           }
         />
         <Route
           path="/dashboard/therapies"
           element={
-            // <Protected>
-            //   <Sidebar>
-            //     <TherapiesScreen />
-            //   </Sidebar>
-            // </Protected>
+            <Protected>
               <Sidebar>
                 <TherapiesScreen />
               </Sidebar>
+            </Protected>
+              
           }
         />
         <Route
           path="/dashboard/quotes"
           element={
-            // <Protected>
-            //   <Sidebar>
-            //     <QuotesScreen />
-            //   </Sidebar>
-            // </Protected>
-            <Sidebar>
-              <QuotesScreen />
-            </Sidebar>
+            <Protected>
+              <Sidebar>
+                <QuotesScreen />
+              </Sidebar>
+            </Protected>
           }
         />
         <Route
           path="/dashboard/users"
           element={
-            // <Protected>
-            //   <Sidebar>
-            //     <UsersScreen />
-            //   </Sidebar>
-            // </Protected>
-            <Sidebar>
+            <Protected>
+              <Sidebar>
                 <UsersScreen />
-             </Sidebar>
+              </Sidebar>
+            </Protected>
           }
         />
       </Routes>
