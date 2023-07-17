@@ -44,99 +44,120 @@ export const AppRouter = () => {
         <Route
           path="/"
           element={
-            <IsLoggedIn>
-              <LandingScreen />
-            </IsLoggedIn>
+            // <IsLoggedIn>
+            //   <LandingScreen />
+            // </IsLoggedIn>
+            <LandingScreen />
           }
         />
         <Route
           path="/about-us"
           element={
-            <IsLoggedIn>
-              <AboutUsScreen />
-            </IsLoggedIn>
+            // <IsLoggedIn>
+            //   <AboutUsScreen />
+            // </IsLoggedIn>
+            <AboutUsScreen />
           }
         />
         <Route
           path="/services"
           element={
-            <IsLoggedIn>
-              <ServicesScreen />
-            </IsLoggedIn>
+            // <IsLoggedIn>
+            //   <ServicesScreen />
+            // </IsLoggedIn>
+            <ServicesScreen />
           }
         />
         <Route
           path="/contact"
           element={
-            <IsLoggedIn>
-              <ContactScreen />
-            </IsLoggedIn>
+            // <IsLoggedIn>
+            //   <ContactScreen />
+            // </IsLoggedIn>
+            <ContactScreen />
           }
         />
         <Route
           path="/login"
           element={
-            <IsLoggedIn>
-              <LoginScreen />
-            </IsLoggedIn>
+            // <IsLoggedIn>
+            //   <LoginScreen />
+            // </IsLoggedIn>
+            <LoginScreen />
           }
         />
         <Route
           path="/register"
           element={
-            <IsLoggedIn>
-              <RegisterScreen />
-            </IsLoggedIn>
+            // <IsLoggedIn>
+            //   <RegisterScreen />
+            // </IsLoggedIn>
+            <RegisterScreen />
           }
         />
         <Route
           path="/dashboard"
           element={
-            <Protected>
-              <Sidebar>
-                <DashboardScreen />
-              </Sidebar>
-            </Protected>
+            // <Protected>
+            //   <Sidebar>
+            //     <DashboardScreen />
+            //   </Sidebar>
+            // </Protected>
+            <Sidebar>
+              <DashboardScreen />
+            </Sidebar>
           }
         />
         <Route
           path="/dashboard/calendar"
           element={
-            <Protected>
-              <Sidebar>
-                <CalendarScreen />
-              </Sidebar>
-            </Protected>
+            // <Protected>
+            //   <Sidebar>
+            //     <CalendarScreen />
+            //   </Sidebar>
+            // </Protected>
+            <Sidebar>
+              <CalendarScreen />
+            </Sidebar>
           }
         />
         <Route
           path="/dashboard/therapies"
           element={
-            <Protected>
+            // <Protected>
+            //   <Sidebar>
+            //     <TherapiesScreen />
+            //   </Sidebar>
+            // </Protected>
               <Sidebar>
                 <TherapiesScreen />
               </Sidebar>
-            </Protected>
           }
         />
         <Route
           path="/dashboard/quotes"
           element={
-            <Protected>
-              <Sidebar>
-                <QuotesScreen />
-              </Sidebar>
-            </Protected>
+            // <Protected>
+            //   <Sidebar>
+            //     <QuotesScreen />
+            //   </Sidebar>
+            // </Protected>
+            <Sidebar>
+              <QuotesScreen />
+            </Sidebar>
           }
         />
         <Route
           path="/dashboard/users"
           element={
-            <Protected>
-              <Sidebar>
+            // <Protected>
+            //   <Sidebar>
+            //     <UsersScreen />
+            //   </Sidebar>
+            // </Protected>
+            <Sidebar>
                 <UsersScreen />
-              </Sidebar>
-            </Protected>
+             </Sidebar>
           }
         />
       </Routes>
