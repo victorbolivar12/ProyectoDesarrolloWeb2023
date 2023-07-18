@@ -64,6 +64,7 @@ export const AppRouter = () => {
             <IsLoggedIn>
               <ServicesScreen />
             </IsLoggedIn>
+            
           }
         />
         <Route
@@ -72,6 +73,7 @@ export const AppRouter = () => {
             <IsLoggedIn>
               <ContactScreen />
             </IsLoggedIn>
+            
           }
         />
         <Route
@@ -80,6 +82,7 @@ export const AppRouter = () => {
             <IsLoggedIn>
               <LoginScreen />
             </IsLoggedIn>
+            
           }
         />
         <Route
@@ -88,6 +91,7 @@ export const AppRouter = () => {
             <IsLoggedIn>
               <RegisterScreen />
             </IsLoggedIn>
+            
           }
         />
         <Route
@@ -98,6 +102,7 @@ export const AppRouter = () => {
                 <DashboardScreen />
               </Sidebar>
             </Protected>
+            
           }
         />
         <Route
@@ -108,6 +113,7 @@ export const AppRouter = () => {
                 <CalendarScreen />
               </Sidebar>
             </Protected>
+            
           }
         />
         <Route
@@ -118,6 +124,7 @@ export const AppRouter = () => {
                 <TherapiesScreen />
               </Sidebar>
             </Protected>
+              
           }
         />
         <Route
