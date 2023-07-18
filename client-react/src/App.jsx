@@ -10,8 +10,9 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Suspense fallback={<Loader />}>
-        <AppRouter />
-        <SnackbarProvider autoHideDuration={5000} />
+        <SnackbarProvider autoHideDuration={5000}>
+          <AppRouter />
+        </SnackbarProvider>
       </Suspense>
     </ThemeProvider>
   );
