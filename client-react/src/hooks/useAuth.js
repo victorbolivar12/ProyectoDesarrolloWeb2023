@@ -35,7 +35,7 @@ export const useAuth = () => {
     }
   }, [auth]);
   useEffect(() => persistState(PERSISTOR_KEYS.user, user), [user]);
-  useEffect(() => persistState(PERSISTOR_KEYS.user, person), [person]);
+  useEffect(() => persistState(PERSISTOR_KEYS.person, person), [person]);
 
   return {
     auth,

@@ -18,6 +18,7 @@ const CalendarScreen = lazy(() => import("../screens/CalendarScreen"));
 const QuotesScreen = lazy(() => import("../screens/QuotesScreen"));
 const TherapiesScreen = lazy(() => import("../screens/TherapiesScreen"));
 const UsersScreen = lazy(() => import("../screens/UsersScreen"));
+const CheckoutScreen = lazy(() => import("../screens/PayForm"));
 
 const Protected = ({ children }) => {
   const { auth } = useAuth();
@@ -32,7 +33,7 @@ const IsLoggedIn = ({ children }) => {
   const { auth } = useAuth();
 
   if (auth?.isAuthenticated) {
-    return <Navigate to="/dashboard" replace />;
+    return <Navigate to="/dashboard/calendar" replace />;
   }
   return children;
 };
@@ -136,6 +137,15 @@ export const AppRouter = () => {
               <Sidebar>
                 <UsersScreen />
               </Sidebar>
+            </Protected>
+          }
+        />
+
+        <Route
+          path="/pay-appointment"
+          element={
+            <Protected>
+              <CheckoutScreen />
             </Protected>
           }
         />

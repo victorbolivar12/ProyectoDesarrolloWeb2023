@@ -29,11 +29,11 @@ import { useAuth } from "../../hooks";
 const drawerWidth = 240;
 
 const items = [
-  {
-    title: "Inicio",
-    icon: <Home />,
-    link: "/dashboard",
-  },
+  // {
+  //   title: "Inicio",
+  //   icon: <Home />,
+  //   link: "/dashboard",
+  // },
   {
     title: "Calendario",
     icon: <CalendarMonth />,
@@ -59,12 +59,12 @@ export const Sidebar = (props) => {
   const { window, children } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
-
+  const { user } = useAuth();
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const { logOut } = useAuth();
-  
+
   const handleClose = () => {
     setAnchorEl(null);
   };

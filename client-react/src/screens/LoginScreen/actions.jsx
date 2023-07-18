@@ -32,7 +32,6 @@ const Action = () => {
 
   const signIn = async (values) => {
     const resp = await request.auth.signIn(values);
-    console.log(resp);
     if (resp.statusCode == 200) {
       setUser(resp.data.user);
       setAuth({ isAuthenticated: true, token: resp.data.token });
@@ -40,7 +39,7 @@ const Action = () => {
       enqueueSnackbar("Usuario inicio sesión correctamente", {
         variant: "success",
       });
-      navigate("/dashboard", { replace: true });
+      navigate("/dashboard/calendar", { replace: true });
     } else {
       enqueueSnackbar(resp.response?.data?.message, {
         variant: "error",
