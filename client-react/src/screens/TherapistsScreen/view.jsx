@@ -96,8 +96,8 @@ const columns = [
       return (
         <Box>
           <Button variant="outlined" onClick={handleClickOpen}>
-        Open dialog
-      </Button>
+          Open dialog
+          </Button>
           <IconButton onClick={handleClickOpen}>
             <Edit />
           </IconButton>
@@ -158,11 +158,6 @@ const rows = [
 ];
 
 const View = () => {
-  const [open, setOpen] = React.useState(false);
-
-  const handleClose = () => {
-    setOpen(false);
-  };
   return (
     <Box height={"100%"}>
       <Typography component="h1" variant="h4" fontWeight={700}>
@@ -183,39 +178,6 @@ const View = () => {
           // checkboxSelection
         />
       </div>
-
-      <BootstrapDialog
-        onClose={handleClose}
-        aria-labelledby="customized-dialog-title"
-        open={open}
-      >
-        <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Modal title
-        </BootstrapDialogTitle>
-        <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
-            magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
-            ullamcorper nulla non metus auctor fringilla.
-          </Typography>
-        </DialogContent>
-        <DialogActions>
-          <Button autoFocus onClick={handleClose}>
-            Save changes
-          </Button>
-        </DialogActions>
-      </BootstrapDialog>
-
-      
     </Box>
     
   );
