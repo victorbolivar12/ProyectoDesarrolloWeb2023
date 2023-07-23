@@ -20,7 +20,7 @@ const columns = [
     headerName: "Nombre completo",
     description: "This column has a value getter and is not sortable.",
     sortable: false,
-    width: 200,
+    width: 250,
     valueGetter: (params) =>
       `${params.row.firstName || ""} ${params.row.lastName || ""}`,
   },
@@ -33,6 +33,7 @@ const columns = [
     field: "action",
     headerName: "Action",
     sortable: false,
+    width: 200,
     renderCell: (params) => {
       const onClick = (e) => {
         e.stopPropagation(); // don't select this row after clicking
@@ -40,8 +41,7 @@ const columns = [
       };
 
       const handleClickOpen = () => {
-        //setOpen(true);
-        return alert("Action");
+        setOpen(true);
       };
       
       return (
@@ -103,6 +103,13 @@ const rows = [
 ];
 
 const View = () => {
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+  
   return (
     <Box height={"100%"}>
       <Typography component="h1" variant="h4" fontWeight={700}>
