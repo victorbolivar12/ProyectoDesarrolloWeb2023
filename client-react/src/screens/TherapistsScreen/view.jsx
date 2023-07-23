@@ -3,15 +3,6 @@ import { DataGrid } from "@mui/x-data-grid";
 import { Box, Typography, IconButton ,Button} from "@mui/material";
 import { Delete, Edit } from "@mui/icons-material";
 
-import PropTypes from 'prop-types';
-import { styled } from '@mui/material/styles';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
-
 const columns = [
   { field: "id", headerName: "Id", width: 250 },
   /*{
@@ -47,17 +38,13 @@ const columns = [
         e.stopPropagation(); // don't select this row after clicking
         return alert(JSON.stringify(params.row, null, 4));
       };
-
-      const handleClickOpen = () => {
-          return alert("Action");
-      };
-
+      
       return (
         <Box>
-          <Button variant="outlined" onClick={handleClickOpen}>
+          <Button variant="outlined" onClick={onClick}>
           Open dialog
           </Button>
-          <IconButton onClick={handleClickOpen}>
+          <IconButton onClick={onClick}>
             <Edit />
           </IconButton>
           
