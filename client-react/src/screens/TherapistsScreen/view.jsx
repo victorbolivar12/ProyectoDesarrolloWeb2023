@@ -95,6 +95,9 @@ const columns = [
 
       return (
         <Box>
+          <Button variant="outlined" onClick={handleClickOpen}>
+        Open dialog
+      </Button>
           <IconButton onClick={handleClickOpen}>
             <Edit />
           </IconButton>
