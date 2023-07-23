@@ -93,7 +93,7 @@ const columns = [
       return (
         <Box> 
                <Button variant="outlined" onClick={handleClickOpen}>
-                    View Ficha
+                    View Fichaa
               </Button>   
            
         </Box>
