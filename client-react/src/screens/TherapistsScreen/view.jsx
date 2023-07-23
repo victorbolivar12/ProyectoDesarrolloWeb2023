@@ -156,9 +156,9 @@ const View = () => {
 
    const [open, setOpen] = React.useState(false);
 
-  /*const handleClickOpen = () => {
+  const handleClickOpen = () => {
     setOpen(true);
-  };*/
+  };
   const handleClose = () => {
     setOpen(false);
   };
