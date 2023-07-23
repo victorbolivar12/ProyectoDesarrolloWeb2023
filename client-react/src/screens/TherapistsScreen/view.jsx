@@ -7,12 +7,12 @@ const columns = [
   { field: "id", headerName: "Id", width: 250 },
   {
     field: "firstName",
-    headerName: "Nombre del paciente",
+    headerName: "Nombre del Terapeuta",
     width: 200,
   },
   {
     field: "lastName",
-    headerName: "Apellido del paciente",
+    headerName: "Apellido del Terapeuta",
     width: 200,
   },
   {
@@ -54,48 +54,48 @@ const columns = [
 ];
 
 const rows = [
-  { id: 1, lastName: "Snow", firstName: "Jon", therapy_name: "psicoanalítica" },
+  { id: 1, lastName: "Lowell", firstName: "George", therapy_name: "psicoanalítica" },
   {
     id: 2,
-    lastName: "Lannister",
-    firstName: "Cersei",
+    lastName: "Turner",
+    firstName: "Tina",
     therapy_name: "neuropsicológica",
   },
   {
     id: 3,
-    lastName: "Lannister",
-    firstName: "Jaime",
+    lastName: "Oldfield",
+    firstName: "Mike",
     therapy_name: "cognitivo-conductual",
   },
   {
     id: 4,
-    lastName: "Stark",
-    firstName: "Arya",
+    lastName: "Atteberry",
+    firstName: "Emily",
     therapy_name: "Gestalt humanista",
   },
   {
     id: 5,
-    lastName: "Targaryen",
-    firstName: "Daenerys",
+    lastName: "Beaumont",
+    firstName: "Susan",
     therapy_name: "racional-emotiva-conductual TREC",
   },
   { id: 6, lastName: "Melisandre", firstName: null, therapy_name: "cognitiva" },
   {
     id: 7,
-    lastName: "Clifford",
-    firstName: "Ferrara",
+    lastName: "Browning",
+    firstName: "William",
     therapy_name: "neuropsicológica",
   },
   {
     id: 8,
-    lastName: "Frances",
-    firstName: "Rossini",
+    lastName: "Campbell",
+    firstName: "Robert",
     therapy_name: "Counseling",
   },
   {
     id: 9,
-    lastName: "Roxie",
-    firstName: "Harvey",
+    lastName: "James",
+    firstName: "Oliver",
     therapy_name: "Psicoanálisis",
   },
 ];
@@ -104,7 +104,7 @@ const View = () => {
   return (
     <Box height={"100%"}>
       <Typography component="h1" variant="h4" fontWeight={700}>
-        Terapias Registradas
+        Terapeutas Registrados
       </Typography>
       <Box mt={3} />
       <div style={{ height: 400, width: "100%" }}>
