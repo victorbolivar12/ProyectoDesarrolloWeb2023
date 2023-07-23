@@ -179,10 +179,8 @@ const View = () => {
           // checkboxSelection
         />
       </div>
-    </Box>
 
-
-    <BootstrapDialog
+      <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
@@ -212,6 +210,9 @@ const View = () => {
           </Button>
         </DialogActions>
       </BootstrapDialog>
+
+      
+    </Box>
     
   );
 };
