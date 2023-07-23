@@ -17,6 +17,7 @@ const DashboardScreen = lazy(() => import("../screens/DashboardScreen"));
 const CalendarScreen = lazy(() => import("../screens/CalendarScreen"));
 const QuotesScreen = lazy(() => import("../screens/QuotesScreen"));
 const TherapiesScreen = lazy(() => import("../screens/TherapiesScreen"));
+const TherapistsScreen = lazy(() => import("../screens/TherapistsScreen"));
 const UsersScreen = lazy(() => import("../screens/UsersScreen"));
 const CheckoutScreen = lazy(() => import("../screens/PayForm"));
 
@@ -122,6 +123,17 @@ export const AppRouter = () => {
             <Protected>
               <Sidebar>
                 <TherapiesScreen />
+              </Sidebar>
+            </Protected>
+              
+          }
+        />
+        <Route
+          path="/dashboard/therapists"
+          element={
+            <Protected>
+              <Sidebar>
+                <TherapistsScreen />
               </Sidebar>
             </Protected>
               
