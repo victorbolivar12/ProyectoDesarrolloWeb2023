@@ -49,6 +49,11 @@ const items = [
     icon: <People />,
     link: "/dashboard/therapies",
   },
+   {
+    title: "Terapeutas",
+    icon: <People />,
+    link: "/dashboard/therapists",
+  },
   {
     title: "Usuarios registrados",
     icon: <Groups3 />,
