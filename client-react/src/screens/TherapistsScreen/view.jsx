@@ -38,16 +38,17 @@ const columns = [
         e.stopPropagation(); // don't select this row after clicking
         return alert(JSON.stringify(params.row, null, 4));
       };
+
+      const handleClickOpen = () => {
+        //setOpen(true);
+        return alert("Action");
+      };
       
       return (
         <Box>
-          <Button variant="outlined" onClick={onClick}>
-          Open dialog
-          </Button>
-          <IconButton onClick={onClick}>
-            <Edit />
-          </IconButton>
-          
+          <Button variant="outlined" onClick={handleClickOpen}>
+            View Ficha
+          </Button>     
         </Box>
       );
     },
