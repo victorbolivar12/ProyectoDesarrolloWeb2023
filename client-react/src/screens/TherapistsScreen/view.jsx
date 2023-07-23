@@ -154,14 +154,14 @@ const rows = [
 
 const View = () => {
 
-   const [open, setOpen] = React.useState(false);
+  /* const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
-  };
+  };*/
   
   return (
     <Box height={"100%"}>
