@@ -49,6 +49,8 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
+const [open, setOpen] = React.useState(false);
+
 const columns = [
   { field: "id", headerName: "Id", width: 250 },
   /*{
@@ -85,8 +87,6 @@ const columns = [
         e.stopPropagation(); // don't select this row after clicking
         return alert(JSON.stringify(params.row, null, 4));
       };
-
-      const [open, setOpen] = React.useState(false);
 
       const handleClickOpen = () => {
         setOpen(true);
@@ -184,12 +184,8 @@ const View = () => {
           pageSizeOptions={[5, 10]}
           // checkboxSelection
         />
-      </div>
-       <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Open dialog
-      </Button>
-      <BootstrapDialog
+
+         <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
@@ -219,7 +215,9 @@ const View = () => {
           </Button>
         </DialogActions>
       </BootstrapDialog>
-    </div>
+        
+      </div>
+       
     </Box>
     
   );
