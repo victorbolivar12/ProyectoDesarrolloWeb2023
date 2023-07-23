@@ -89,6 +89,10 @@ const columns = [
         return alert(JSON.stringify(params.row, null, 4));
       };
 
+      const handleClickOpen = () => {
+          setOpen(true);
+      };
+
       return (
         <Box>
           <IconButton onClick={handleClickOpen}>
@@ -153,9 +157,6 @@ const rows = [
 const View = () => {
   const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
   const handleClose = () => {
     setOpen(false);
   };
