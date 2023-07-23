@@ -154,14 +154,14 @@ const rows = [
 
 const View = () => {
 
-  /* const [open, setOpen] = React.useState(false);
+   const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
+  /*const handleClickOpen = () => {
     setOpen(true);
-  };
+  };*/
   const handleClose = () => {
     setOpen(false);
-  };*/
+  };
   
   return (
     <Box height={"100%"}>
@@ -181,9 +181,8 @@ const View = () => {
           rowSelection={false}
           pageSizeOptions={[5, 10]}
           // checkboxSelection
-        />
 
-         <BootstrapDialog
+          <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
@@ -213,6 +212,10 @@ const View = () => {
           </Button>
         </DialogActions>
       </BootstrapDialog>
+          
+        />
+
+         
         
       </div>
        
