@@ -5,7 +5,7 @@ import { Delete, Edit } from "@mui/icons-material";
 
 const columns = [
   { field: "id", headerName: "Id", width: 250 },
-  {
+  /*{
     field: "firstName",
     headerName: "Nombre del Terapeuta",
     width: 200,
@@ -14,7 +14,7 @@ const columns = [
     field: "lastName",
     headerName: "Apellido del Terapeuta",
     width: 200,
-  },
+  },*/
   {
     field: "fullName",
     headerName: "Nombre completo",
@@ -24,11 +24,11 @@ const columns = [
     valueGetter: (params) =>
       `${params.row.firstName || ""} ${params.row.lastName || ""}`,
   },
-  {
+ /* {
     field: "therapy_name",
     headerName: "Nombre de la terapia",
     width: 200,
-  },
+  },*/
   {
     field: "action",
     headerName: "Action",
