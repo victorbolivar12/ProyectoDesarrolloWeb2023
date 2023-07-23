@@ -60,9 +60,7 @@ const columns = [
           <IconButton onClick={handleClickOpen}>
             <Edit />
           </IconButton>
-          <IconButton onClick={onClick}>
-            <Delete />
-          </IconButton>
+          
         </Box>
       );
     },
