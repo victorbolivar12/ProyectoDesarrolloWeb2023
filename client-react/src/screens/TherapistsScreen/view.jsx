@@ -130,8 +130,7 @@ const columns = [
                 <BootstrapDialog
                   onClose={handleClose}
                   aria-labelledby="customized-dialog-title"
-                 style={{ width: "100%",
-                  maxWidth: 550,}}
+                 style={{  width:500, height:350,}}
                   open={open}
                 >
                   <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
