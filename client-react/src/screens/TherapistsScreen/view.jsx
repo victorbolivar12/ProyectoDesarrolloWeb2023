@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { Box, Typography, IconButton ,Button} from "@mui/material";
 import { Delete, Edit } from "@mui/icons-material";
@@ -10,6 +10,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import CloseIcon from '@mui/icons-material/Close';
+
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -49,6 +50,7 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
+
 const columns = [
   { field: "id", headerName: "Id", width: 250 },
   /*{
@@ -85,19 +87,52 @@ const columns = [
         e.stopPropagation(); // don't select this row after clicking
         return alert(JSON.stringify(params.row, null, 4));
       };
-      const [open, setOpen] = React.useState(false);
+
+       const [open, setOpen] = React.useState(false);
+
       const handleClickOpen = () => {
         setOpen(true);
       };
       const handleClose = () => {
         setOpen(false);
       };
-      
       return (
         <Box> 
-               <Button variant="outlined" onClick={handleClickOpen}>
-                    View Ficha
-              </Button>   
+              <div>
+                <Button variant="outlined" onClick={handleClickOpen}>
+                 View Ficha
+                </Button>
+                <BootstrapDialog
+                  onClose={handleClose}
+                  aria-labelledby="customized-dialog-title"
+                  open={open}
+                >
+                  <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
+                    Modal title
+                  </BootstrapDialogTitle>
+                  <DialogContent dividers>
+                    <Typography gutterBottom>
+                      Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+                      dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+                      consectetur ac, vestibulum at eros.
+                    </Typography>
+                    <Typography gutterBottom>
+                      Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                      Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+                    </Typography>
+                    <Typography gutterBottom>
+                      Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
+                      magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
+                      ullamcorper nulla non metus auctor fringilla.
+                    </Typography>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button autoFocus onClick={handleClose}>
+                      Save changes
+                    </Button>
+                  </DialogActions>
+                </BootstrapDialog>
+              </div>   
            
         </Box>
       );
@@ -153,16 +188,6 @@ const rows = [
 ];
 
 const View = () => {
-
-   const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
-  
   return (
     <Box height={"100%"}>
       <Typography component="h1" variant="h4" fontWeight={700}>
@@ -181,44 +206,8 @@ const View = () => {
           rowSelection={false}
           pageSizeOptions={[5, 10]}
           // checkboxSelection
-
-          <BootstrapDialog
-        onClose={handleClose}
-        aria-labelledby="customized-dialog-title"
-        open={open}
-      >
-        <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Modal title
-        </BootstrapDialogTitle>
-        <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
-            magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
-            ullamcorper nulla non metus auctor fringilla.
-          </Typography>
-        </DialogContent>
-        <DialogActions>
-          <Button autoFocus onClick={handleClose}>
-            Save changes
-          </Button>
-        </DialogActions>
-      </BootstrapDialog>
-          
         />
-
-         
-        
       </div>
-       
     </Box>
     
   );
