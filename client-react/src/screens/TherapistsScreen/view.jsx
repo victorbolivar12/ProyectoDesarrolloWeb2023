@@ -123,7 +123,6 @@ const columns = [
         ];
       
       return (
-        <Box> 
               <div>
                 <Button variant="outlined" onClick={handleClickOpen}>
                  View Ficha
@@ -172,9 +171,7 @@ const columns = [
                     </Button>
                   </DialogActions>
                 </BootstrapDialog>
-              </div>   
-           
-        </Box>
+              </div> 
       );
     },
   },
