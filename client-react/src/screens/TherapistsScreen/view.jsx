@@ -144,9 +144,25 @@ const columns = [
                       Caracteristicas del Especialista 2.
                     </Typography>
                   </DialogContent>
+                  <Calendar
+                      localizer={localizer}
+                      culture="es-Es"
+                      startAccessor="start"
+                      endAccessor="end"
+                      events={myEventsList}
+                      style={{ height: "85vh" }}
+                      messages={{
+                        next: "Sig",
+                        previous: "Ant",
+                        today: "Hoy",
+                        month: "Mes",
+                        week: "Semana",
+                        day: "Día",
+                      }}
+                    />
                   <DialogActions>
                     <Button autoFocus onClick={handleClose}>
-                      Save changes
+                      Ok
                     </Button>
                   </DialogActions>
                 </BootstrapDialog>
