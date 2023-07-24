@@ -136,32 +136,34 @@ const columns = [
                   <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
                     Especialista 
                   </BootstrapDialogTitle>
-                  <DialogContent dividers>
-                    <Typography gutterBottom>
-                      Caracteristicas del Especialista.
-                    </Typography>
-                    <Typography gutterBottom>
-                      Caracteristicas del Especialista 2.
-                    </Typography>
-                  </DialogContent>
-                  <Grid container spacing={1}>
-                  <Grid item md>
-                  <Calendar
-                      localizer={localizer}
-                      culture="es-Es"
-                      startAccessor="start"
-                      endAccessor="end"
-                      events={myEventsList}
-                      style={{ height: "85vh" }}
-                      messages={{
-                        next: "Sig",
-                        previous: "Ant",
-                        today: "Hoy",
-                        month: "Mes",
-                        week: "Semana",
-                        day: "Día",
-                      }}
-                    />
+                  <Grid container spacing={2}>
+                    <Grid item md>
+                        <DialogContent dividers>
+                          <Typography gutterBottom>
+                            Caracteristicas del Especialista.
+                          </Typography>
+                          <Typography gutterBottom>
+                            Caracteristicas del Especialista 2.
+                          </Typography>
+                        </DialogContent>
+                      </Grid>
+                    <Grid item md>
+                          <Calendar
+                              localizer={localizer}
+                              culture="es-Es"
+                              startAccessor="start"
+                              endAccessor="end"
+                              events={myEventsList}
+                              style={{ height: "85vh" }}
+                              messages={{
+                                next: "Sig",
+                                previous: "Ant",
+                                today: "Hoy",
+                                month: "Mes",
+                                week: "Semana",
+                                day: "Día",
+                              }}
+                            />
                       </Grid>
                     </Grid>
                   <DialogActions>
