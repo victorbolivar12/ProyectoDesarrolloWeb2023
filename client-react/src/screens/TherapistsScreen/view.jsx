@@ -134,52 +134,15 @@ const columns = [
                   open={open}
                 >
                   <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-                    Modal title
+                    Especialista 
                   </BootstrapDialogTitle>
                   <DialogContent dividers>
                     <Typography gutterBottom>
-                      Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                      dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                      consectetur ac, vestibulum at eros.
+                      Caracteristicas del Especialista.
                     </Typography>
                     <Typography gutterBottom>
-                      Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-                      Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+                      Caracteristicas del Especialista 2.
                     </Typography>
-                    <Grid container spacing={2}>
-                        <Grid item md>
-                          <Calendar
-                            localizer={localizer}
-                            culture="es-Es"
-                            startAccessor="start"
-                            endAccessor="end"
-                            events={myEventsList}
-                            style={{ height: "85vh" }}
-                            messages={{
-                              next: "Sig",
-                              previous: "Ant",
-                              today: "Hoy",
-                              month: "Mes",
-                              week: "Semana",
-                              day: "Día",
-                            }}
-                          />
-                        </Grid>
-                        <Grid item md>
-                          <Box
-                            sx={{
-                              display: "flex",
-                              flexDirection: "column",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              height: "100%",
-                              p: 5,
-                              border: "1px solid grey",
-                              borderRadius: 5,
-                            }}
-                          >
-                          </Grid>
-                  </Grid>
                   </DialogContent>
                   <DialogActions>
                     <Button autoFocus onClick={handleClose}>
