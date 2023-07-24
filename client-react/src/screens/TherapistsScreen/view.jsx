@@ -11,6 +11,14 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import CloseIcon from '@mui/icons-material/Close';
 
+import { CustomBottom, TextInput } from "../../components";
+import { Calendar, momentLocalizer } from "react-big-calendar";
+import moment from "moment";
+import "moment/locale/es.js";
+import "react-big-calendar/lib/css/react-big-calendar.css";
+import { useNavigate } from "react-router-dom";
+
+const localizer = momentLocalizer(moment);
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -52,6 +60,7 @@ BootstrapDialogTitle.propTypes = {
 
 
 const columns = [
+  
   { field: "id", headerName: "Id", width: 250 },
   /*{
     field: "firstName",
@@ -96,6 +105,23 @@ const columns = [
       const handleClose = () => {
         setOpen(false);
       };
+
+      const navigate = useNavigate();
+
+        //array de eventos
+        const myEventsList = [
+          {
+            title: "Cita",
+            start: new Date("2023-07-18 10:22:00"),
+            end: new Date("2023-07-18 10:42:00"),
+          },
+          {
+            title: "Cita",
+            start: new Date("2023-07-05 12:22:00"),
+            end: new Date("2023-07-05 13:42:00"),
+          },
+        ];
+      
       return (
         <Box> 
               <div>
