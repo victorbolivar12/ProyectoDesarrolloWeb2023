@@ -144,6 +144,8 @@ const columns = [
                       Caracteristicas del Especialista 2.
                     </Typography>
                   </DialogContent>
+                  <Grid container spacing={1}>
+                  <Grid item md>
                   <Calendar
                       localizer={localizer}
                       culture="es-Es"
@@ -160,6 +162,8 @@ const columns = [
                         day: "Día",
                       }}
                     />
+                      </Grid>
+                    </Grid>
                   <DialogActions>
                     <Button autoFocus onClick={handleClose}>
                       Ok
