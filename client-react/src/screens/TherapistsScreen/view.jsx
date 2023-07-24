@@ -1,6 +1,6 @@
 import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { Box, Typography, IconButton ,Button} from "@mui/material";
+import { Box, Typography, IconButton ,Button, Grid} from "@mui/material";
 import { Delete, Edit } from "@mui/icons-material";
 
 import PropTypes from 'prop-types';
@@ -146,11 +146,40 @@ const columns = [
                       Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
                       Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
                     </Typography>
-                    <Typography gutterBottom>
-                      Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
-                      magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
-                      ullamcorper nulla non metus auctor fringilla.
-                    </Typography>
+                    <Grid container spacing={2}>
+                        <Grid item md>
+                          <Calendar
+                            localizer={localizer}
+                            culture="es-Es"
+                            startAccessor="start"
+                            endAccessor="end"
+                            events={myEventsList}
+                            style={{ height: "85vh" }}
+                            messages={{
+                              next: "Sig",
+                              previous: "Ant",
+                              today: "Hoy",
+                              month: "Mes",
+                              week: "Semana",
+                              day: "Día",
+                            }}
+                          />
+                        </Grid>
+                        <Grid item md>
+                          <Box
+                            sx={{
+                              display: "flex",
+                              flexDirection: "column",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              height: "100%",
+                              p: 5,
+                              border: "1px solid grey",
+                              borderRadius: 5,
+                            }}
+                          >
+                          </Grid>
+                  </Grid>
                   </DialogContent>
                   <DialogActions>
                     <Button autoFocus onClick={handleClose}>
