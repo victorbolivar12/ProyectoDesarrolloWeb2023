@@ -98,8 +98,8 @@ const columns = [
       };
 
        const [open, setOpen] = React.useState(false);
-      const [fullWidth, setFullWidth] = React.useState(true);
-      const [maxWidth, setMaxWidth] = React.useState('sm');
+      const [fullWidth, 500] = React.useState(true);
+      const [maxWidth, 350] = React.useState('sm');
 
       const handleClickOpen = () => {
         setOpen(true);
@@ -132,6 +132,8 @@ const columns = [
                 <BootstrapDialog
                   onClose={handleClose}
                   aria-labelledby="customized-dialog-title"
+                  fullWidth={500}
+                  maxWidth={350}
                   open={open}
                 >
                   <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
